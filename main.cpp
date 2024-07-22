@@ -61,7 +61,7 @@ void writeEventsToCSV(const std::map<std::string, std::vector<Event>>& Events, c
     }
 }
 // Define the classes to keep
-const unordered_set<int> CLASSES_TO_KEEP = {1, 2, 76, 79}; // person
+const unordered_set<int> CLASSES_TO_KEEP = {0, 2, 76, 79}; // person
 //Mouse callback for cv object:
 // Special case for when point lies in a segment 
 bool onSegment(Point p, Point q, Point r) {
@@ -294,7 +294,7 @@ int main() {
     try {
         //Find the model for inference
         wostringstream model_path;
-        model_path << L"yolov10s.onnx";
+        model_path << L"yolov10n.onnx";
         InferenceEngine engine(model_path);
 
         //setup the camera, wiindow name is "Webcam"
